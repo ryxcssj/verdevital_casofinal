@@ -20,7 +20,9 @@
     </nav>
     <div class="nav-actions">
       <button id="btnLogin">Iniciar Sesión</button>
-      <div class="cart">🛒 <span id="carritoCount">0</span></div>
+      <div class="cart"></div>
+      <button id="btnCheckout" class="cart">🛒 <span id="carritoCount">0</span></button>
+
     </div>
   </header>
 <main class="principal">
@@ -100,6 +102,15 @@
         <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a> |
         <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a> |
         <a href="https://x.com" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+    </div>
+    <!-- Modal Carrito -->
+  <div id="modalCarrito" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="cerrarModal('modalCarrito')">&times;</span>
+        <h2>Tu Carrito</h2>
+        <ul id="listaCarrito"></ul>
+        <button onclick="mostrarCheckout()">Finalizar Compra</button>
+      </div>
     </div>
 
   </section>

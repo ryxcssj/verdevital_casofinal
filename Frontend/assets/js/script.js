@@ -1,8 +1,8 @@
 // File: assets/js/script.js
 const productos = [
-  { id:1, nombre: "Té Verde Detox", descripcion: "Infusión antioxidante...", precio: 4990, stock: 12, categoria: "Infusiones", imagen: "https://via.placeholder.com/300x200?text=Te+Verde" },
-  { id:2, nombre: "Maca Andina", descripcion: "Suplemento energizante...", precio: 7500, stock: 8, categoria: "Suplementos", imagen: "https://via.placeholder.com/300x200?text=Maca+Andina" },
-  { id:3, nombre: "Mix Semillas", descripcion: "Snacks saludables...", precio: 3200, stock: 20, categoria: "Snacks", imagen: "https://via.placeholder.com/300x200?text=Mix+Semillas" }
+  { id:1, nombre: "Té Verde Detox", descripcion: "Infusión antioxidante...", precio: 4990, stock: 12, categoria: "Infusiones", imagen: "https://placehold.co/300x200?text=Te+Verde"},
+  { id:2, nombre: "Maca Andina", descripcion: "Suplemento energizante...", precio: 7500, stock: 8, categoria: "Suplementos", imagen: "https://placehold.co/300x200?text=Maca+Andina" },
+  { id:3, nombre: "Mix Semillas", descripcion: "Snacks saludables...", precio: 3200, stock: 20, categoria: "Snacks", imagen: "https://placehold.co/300x200?text=Mix+Semillas"}
 ];
 let carrito = [];
 let usuario = null;
@@ -15,6 +15,11 @@ window.onload = () => {
   document.getElementById('formLogin').onsubmit = handleLogin;
   document.getElementById('formNewsletter').onsubmit = handleNewsletter;
   document.getElementById('formCheckout').onsubmit = handleCheckout;
+  document.querySelector('.cart').onclick = () => {
+  actualizarResumen();
+  abrirModal('modalCarrito');
+};
+
 };
 
 function renderizarCategorias() {
@@ -68,13 +73,14 @@ function ordenarProductos(){
 }
 
 function agregarAlCarrito(){
-  const nombre=document.getElementById('modalTitulo').innerText;
-  const precio=parseInt(document.getElementById('modalPrecio').innerText.replace(/[$.]/g,''));
-  carrito.push({nombre,precio});
-  document.getElementById('carritoCount').innerText=carrito.length;
-  actualizarResumen();
+  const nombre = document.getElementById('modalTitulo').innerText;
+  const precio = parseInt(document.getElementById('modalPrecio').innerText.replace(/[$.]/g, ''));
+  carrito.push({nombre, precio});
+  document.getElementById('carritoCount').innerText = carrito.length;
+  actualizarResumen();  // << Esto es importante
   cerrarModal('modalProducto');
 }
+
 
 function actualizarResumen(){
   const lista=document.getElementById('listaCarrito'); lista.innerHTML=''; let total=0;
