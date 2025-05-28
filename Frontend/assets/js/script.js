@@ -105,3 +105,22 @@ document.getElementById('btnTema').onclick = () => {
     btn.innerText = 'Tema Oscuro';
   }
 };
+
+function abrirModal(id) {
+  const modal = document.getElementById(id);
+  modal.style.display = 'flex';
+
+  // Cerrar con la tecla Escape
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      cerrarModal(id);
+    }
+  });
+
+  // Cerrar al hacer clic fuera del contenido
+  modal.addEventListener('click', function(event) {
+    if (event.target === modal) {
+      cerrarModal(id);
+    }
+  });
+}
