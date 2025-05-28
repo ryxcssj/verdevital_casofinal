@@ -95,3 +95,13 @@ function anularCompra(){carrito=[]; actualizarResumen(); cerrarModal('modalCheck
 function handleLogin(e){ e.preventDefault(); usuario=e.target[0].value; document.getElementById('btnLogin').innerText=`Hola, ${usuario}`; cerrarModal('modalLogin'); }
 function handleNewsletter(e){ e.preventDefault(); alert('¡Gracias por suscribirte!'); }
 function handleCheckout(e){ e.preventDefault(); alert('Pedido enviado con éxito'); carrito=[]; actualizarResumen(); cerrarModal('modalCheckout'); }
+
+document.getElementById('btnTema').onclick = () => {
+  document.body.classList.toggle('oscuro');
+  const btn = document.getElementById('btnTema');
+  if (document.body.classList.contains('oscuro')) {
+    btn.innerText = 'Tema Claro';
+  } else {
+    btn.innerText = 'Tema Oscuro';
+  }
+};
