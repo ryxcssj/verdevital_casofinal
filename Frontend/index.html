@@ -22,7 +22,7 @@
       <button id="btnLogin">Iniciar Sesión</button>
       <div class="cart"></div>
       <button id="btnCheckout" class="cart">🛒 <span id="carritoCount">0</span></button>
-      <button id="temaToggle" class="theme-toggle">🌙</button>
+      <button id="Toggle-darkMode">🌙</button>
     </div>
   </header>
 <main class="principal">
@@ -63,20 +63,34 @@
       <button onclick="agregarAlCarrito()">Agregar al carrito</button>
     </div>
   </div>
-
-  <!-- Modal Login -->
-  <div id="modalLogin" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="cerrarModal('modalLogin')">&times;</span>
-      <h2>Iniciar Sesión / Registro</h2>
-      <form id="formLogin">
-        <input type="email" placeholder="Correo electrónico" required>
-        <input type="password" placeholder="Contraseña" required>
-        <button type="submit">Entrar</button>
-      </form>
+<section class="modals">
+    <!-- Modal Login -->
+    <div id="modalLogin" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="cerrarModal('modalLogin')">&times;</span>
+        <h2>Iniciar Sesión / Registro</h2>
+        <form id="formLogin">
+          <input type="email" placeholder="Correo electrónico" required>
+          <input type="password" placeholder="Contraseña" required>
+          <button type="submit">Entrar</button>
+        </form>
+      </div>
     </div>
-  </div>
 
+    <!--Modal Registrer-->
+    <div id="modalRegistrer" class="modal">
+      <div class="modal-content">
+        <span.close onclick="cerrarModal('modalRegistrer')">&times;</span>
+        <h2>Registro</h2>
+        <form id="formRegister">
+          <input type="text" placeholder="Nombre completo" required>
+          <input type="email" placeholder="Correo electrónico" required>
+          <input type="password" placeholder="Contraseña" required>
+          <button type="submit">Registrarse</button>
+        </form>
+      </div>
+    </div>
+</section>
   <!-- Modal Checkout -->
   <div id="modalCheckout" class="modal">
     <div class="modal-content">

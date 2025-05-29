@@ -101,6 +101,7 @@ body {
 
 .hero-content button:hover {
   background-color: #2e7d32;
+  box-shadow: #e0e0e0;
 }
 
 /* Categorías */
@@ -315,71 +316,4 @@ footer {
   color: white;
   text-align: center;
   padding: 1rem;
-}
-
-
-/* Tema claro (por defecto) */
-@media (prefers-color-scheme: light) {
-  body {
-    background-color: #f0fdf4;
-    color: #333;
-  }
-  .navbar, footer {
-    background-color: #1b5e20;
-    color: #fff;
-  }
-  .producto-card {
-    background: #fff;
-    color: #333;
-  }
-  #contacto {
-    background-color: #e8f5e9;
-    color: #333;
-  }
-}
-
-/* Tema oscuro */
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #181f1b;
-    color: #e0e0e0;
-  }
-  .navbar, footer {
-    background-color: #263238;
-    color: #e0e0e0;
-  }
-  .logo, .nav-links a, .nav-actions button, .nav-actions .cart {
-    color: #e0e0e0;
-  }
-  .producto-card {
-    background: #232d26;
-    color: #e0e0e0;
-  }
-  .producto-card .precio {
-    color: #81c784;
-  }
-  #contacto {
-    background-color: #263238;
-    color: #e0e0e0;
-  }
-  .categoria-list button {
-    background-color: #37474f;
-    color: #e0e0e0;
-  }
-  .categoria-list button:hover {
-    background-color: #455a64;
-  }
-  .modal-content {
-    background: #232d26;
-    color: #e0e0e0;
-  }
-  .modal-content .close {
-    color: #e0e0e0;
-  }
-  #filtros input,
-  #filtros select {
-    background: #232d26;
-    color: #e0e0e0;
-    border: 2px solid #607d8b;
-  }
 }
